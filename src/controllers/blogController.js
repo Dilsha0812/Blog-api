@@ -17,11 +17,24 @@ const addBlog = async(req,res)=>{
     else{
         res.json({message:'insertion failed',data:null});
     }
+};
+
+
+
+
+const findABlog = async (req,res)=>{
+    const id = req.params.blog_id;
+    const fetchedBlog = await blogService.findABlogById(id);
+    if(fetchedBlog){
+        res.json({message: "data fetched successfully",data : fetchedBlog});
+    } else{
+        res.json({message: "failed to fetch data",data : null});
+    }
     
-}
+};
 
 module.exports = {
-    getAllblog,addBlog
+    getAllblog,addBlog,findABlog
 };
 
 
