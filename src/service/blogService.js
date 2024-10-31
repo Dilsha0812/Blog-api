@@ -1,7 +1,7 @@
 const blogs = require('../models/blog')
 
 const fetchAllBlogs = async()=>{
-    const blogLists = await blogs.find({},{__v:0});
+    const blogLists = await blogs.find({},{__v:1});
     return blogLists;
 }
 
@@ -15,11 +15,8 @@ const findABlogById = async(id) =>{
     return await blogs.findById({_id:id})
 }
 
-
-
 module.exports = {
     fetchAllBlogs,
     createNewBlog,
-    findABlogById,
-   
+    findABlogById
 }
