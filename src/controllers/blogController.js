@@ -30,11 +30,19 @@ const findABlog = async (req,res)=>{
     } else{
         res.json({message: "failed to fetch data",data : null});
     }
-    
+};
+
+const deleteBlog = async (req,res)=>{
+    const deleteBlog = await blogService.deleteABlogById(req.params.id);
+    if(deleteBlog){
+        res.json({message: "data deleted successfully",data : deleteBlog});
+    } else{
+        res.json({message: "failed to delete data",data : null});
+    }
 };
 
 module.exports = {
-    getAllblog,addBlog,findABlog
+    getAllblog,addBlog,findABlog,deleteBlog
 };
 
 
