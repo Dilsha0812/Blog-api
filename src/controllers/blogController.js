@@ -32,17 +32,10 @@ const findABlog = async (req,res)=>{
     }
 };
 
-const deleteBlog = async (req,res)=>{
-    const deleteBlog = await blogService.deleteABlogById(req.params.id);
-    if(deleteBlog){
-        res.json({message: "data deleted successfully",data : deleteBlog});
-    } else{
-        res.json({message: "failed to delete data",data : null});
-    }
-};
+
 
 module.exports = {
-    getAllblog,addBlog,findABlog,deleteBlog
+    getAllblog,addBlog,findABlog
 };
 
 
