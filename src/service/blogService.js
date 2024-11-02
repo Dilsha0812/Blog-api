@@ -1,7 +1,7 @@
 const blogs = require('../models/blog')
 
 const fetchAllBlogs = async()=>{
-    const blogLists = await blogs.find({},{__v:1});
+    const blogLists = await blogs.find({});
     return blogLists;
 }
 
