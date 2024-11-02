@@ -41,6 +41,8 @@ const deleteBlog = async (req,res)=>{
     }
 };
 
+
+
 module.exports = {
     getAllblog,addBlog,findABlog,deleteBlog
 };
